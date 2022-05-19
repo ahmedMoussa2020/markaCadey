@@ -1,7 +1,7 @@
 import styles from "../styles/ProductList.module.css"
 import ProductCard from "./ProductCard";
 
-const ProductList = () => {
+const ProductList = ({kalaList}) => {
     return (
         <div className={styles.container}>
             <h1 className={styles.title}> BEST FOOD IN MALMÖ</h1>
@@ -18,10 +18,9 @@ const ProductList = () => {
 
 
             <div className={styles.wrapper}>
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                {kalaList.map((kala) => (
+                    <ProductCard key={kala._id} kala={kala} />
+                ))}
             </div>
         </div>
 
