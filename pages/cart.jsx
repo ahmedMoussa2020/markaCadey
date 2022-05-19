@@ -11,7 +11,6 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
 
-
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [open, setOpen] = useState(false);
@@ -166,8 +165,7 @@ const Cart = () => {
               </button>
               <PayPalScriptProvider
                 options={{
-                  "client-id":
-                    "test",
+                  "client-id": "test",
                   components: "buttons",
                   currency: "USD",
                   "disable-funding": "credit,card,p24",
