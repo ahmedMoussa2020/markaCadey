@@ -26,19 +26,22 @@ export default async function handler(req, res) {
     //     //   return res.status(401).json("Not authenticated!")
     //     }
     try {
-      const product = await Product.create(req.body);
+      const product = await Product.findByIdAndUpdate(id, req.body, {
+        new: true,
+      });
       res.status(201).json(product);
     } catch (err) {
       res.status(500).json(err);
     }
+    
   if (method === "DELETE")
     //   {
     //     // if(!token || token !== process.env.token){
     //     //   return res.status(401).json("Not authenticated!")
     //     }
     try {
-      const product = await Product.create(req.body);
-      res.status(201).json(product);
+      await Product.findByIdAndDelete(id);
+      res.status(200).json("The product has been deleted");
     } catch (err) {
       res.status(500).json(err);
     }
