@@ -10,6 +10,7 @@ import {
 import axios from "axios";
 import { useRouter } from "next/router";
 import { reset } from "../redux/cartSlice";
+import OrderDetail from "../components/OrderDetail";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -165,7 +166,8 @@ const Cart = () => {
               </button>
               <PayPalScriptProvider
                 options={{
-                  "client-id": "test",
+                  "client-id":
+                    "ATTL8fDJKfGzXNH4VVuDy1qW4_Jm8S0sqmnUTeYtWpqxUJLnXIn90V8YIGDg-SNPaB70Hg4mko_fde4-",
                   components: "buttons",
                   currency: "USD",
                   "disable-funding": "credit,card,p24",
